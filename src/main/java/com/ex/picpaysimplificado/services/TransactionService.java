@@ -43,8 +43,8 @@ public class TransactionService {
         receiver.setBalance(receiver.getBalance().add(transaction.value()));
 
         this.repository.save(newTransaction);
-        this.userService.seveUser(sender);
-        this.userService.seveUser(receiver);
+        this.userService.saveUser(sender);
+        this.userService.saveUser(receiver);
     }
     public boolean authorizeTransaction(User sender, BigDecimal value){
         ResponseEntity<Map> authorizationResponse = restTemplate.getForEntity(

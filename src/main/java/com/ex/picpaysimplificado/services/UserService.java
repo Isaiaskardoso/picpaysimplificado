@@ -29,14 +29,14 @@ public class UserService {
     }
     public User createUser(UserDTO data){
         User newUser = new User(data);
-        this.seveUser(newUser);
+        this.saveUser(newUser);
         return newUser;
 
     }
     public List<User> getAllUsers(){
         return this.repository.findAll();
     }
-    public void seveUser(User user){
+    public void saveUser(User user){
         this.repository.save(user);
     }
 }
