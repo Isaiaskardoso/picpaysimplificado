@@ -18,7 +18,7 @@ public class NotificationService {
         NotificationDTO notificationRequest = new NotificationDTO(email, message);
 
        ResponseEntity<String> notificationResponse = restTemplate.postForEntity(
-               "https://myaccount.google.com/?utm_source=sign_in_no_continue&pli=1", notificationRequest, String.class);
+               "https://www.falta a URL", notificationRequest, String.class);
 
        if (!(notificationResponse.getStatusCode() == HttpStatus.OK)){
            System.out.println("Erro ao enviar notificação");
